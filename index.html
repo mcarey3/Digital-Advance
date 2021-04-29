@@ -2,7 +2,7 @@
 <html>
 <head>
 	
-	<title>Map</title>
+	<title>Quick Start - Leaflet</title>
 
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,10 +22,10 @@
 <div id="mapid" style="width: 100%; height: 800px;"></div>
 <script>
 
-	var mymap = L.map('mapid').setView([[51.14471, -2.69866], 13);
+	var mymap = L.map('mapid').setView([51.129852, -2.7334955], 15);
 
 	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-		maxZoom: 18,
+		maxZoom: 20,
 		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
 			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
 		id: 'mapbox/streets-v11',
@@ -33,7 +33,15 @@
 		zoomOffset: -1
 	}).addTo(mymap);
 	
-	//var maker = L.marker([51.14471, -2.69866]).addTo(mymap);
+	var marker = L.marker([51.14471, -2.69866]).addTo(mymap);   
+	marker.bindPopup("<img style='width: 300px' src='tor.jpg'/><br /><b>Glastonbury Tor</b>").openPopup();	
+	
+	var college = L.marker([51.129852, -2.7334955]).addTo(mymap);
+	college.bindPopup("<b>C Block</b><br>Strode College").openPopup();
+	
+	//var college1 = L.marker([51.129952, -2.7334955]).addTo(mymap);
+	
+		//var maker = L.marker([51.14471, -2.69866]).addTo(mymap);
 	//marker.bindPopup("<img style='width: 300px' src='tor.jpg'/><br />b<Glastonbury Tor</b>").openPopup();
 	
 	//var college = L.marker([51.129852, -2.7334955]).addTo(mymap);
@@ -56,3 +64,5 @@
 
 </body>
 </html>
+	
+
