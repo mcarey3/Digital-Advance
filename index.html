@@ -80,6 +80,24 @@
 	
 	var marker = L.marker([51.130468, -2.7294581]).addTo(mymap);   
 	marker.bindPopup("<img style='width: 300px' src='Sports Centre.jpg'/><br /><b>Sports Centre, Strode College</b>").openPopup();
+	
+	var baseMaps = {
+           "OSM ": osm,
+           "Google": google
+        };
+	
+        var overlayMaps = {
+	    "Surface": surface,
+            "Marker": marker,
+            "College": college
+       };
+	
+
+       L.control.layers(baseMaps, overlayMaps).addTo(mymap);
+	
+	mymap.addControl(new L.Control.Fullscreen());
+	L.control.mousePosition().addTo(mymap);
+
 
 
 </script>
